@@ -55,8 +55,8 @@
                   ti male a type specimen book.
                 </p>
                 <div class="slider__buttons">
-                  <div class="slider__button">GET STARTED NOW</div>
-                  <div class="slider__button">LEARN MORE</div>
+                  <div class="slider__button btn__orange">GET STARTED NOW</div>
+                  <div class="slider__button btn">LEARN MORE</div>
                 </div>
               </div>
             </div>
@@ -68,8 +68,8 @@
                 <div class="slider__decor"></div>
                 <p class="slider__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id hic illo debitis architecto nam deserunt voluptatem ipsum consequatur, recusandae molestias a animi quas temporibus omnis alias cum ad minima consequuntur? Nihil qui sunt minus possimus modi dolorum rem, fugiat impedit?</p>
                 <div class="slider__buttons">
-                  <div class="slider__button">GET STARTED NOW</div>
-                  <div class="slider__button">LEARN MORE</div>
+                  <div class="slider__button btn__orange">GET STARTED NOW</div>
+                  <div class="slider__button btn">LEARN MORE</div>
                 </div>
               </div>
             </div>
@@ -81,8 +81,8 @@
                 <div class="slider__decor"></div>
                 <p class="slider__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id hic illo debitis architecto nam deserunt voluptatem ipsum consequatur, recusandae molestias a animi quas temporibus omnis alias cum ad minima consequuntur? Nihil qui sunt minus possimus modi dolorum rem, fugiat impedit?</p>
                 <div class="slider__buttons">
-                  <div class="slider__button">GET STARTED NOW</div>
-                  <div class="slider__button">LEARN MORE</div>
+                  <div class="slider__button btn__orange">GET STARTED NOW</div>
+                  <div class="slider__button btn">LEARN MORE</div>
                 </div>
               </div>
             </div>
@@ -94,7 +94,9 @@
     <div class="header__ancor">
       <div class="header__ancor_border">
         <div class="header__ancor_box">
-          <img class="header__ancor_img" src="./image/header-ancor.png" alt="Ancor forms">
+          <a href="#form" class="header__ancor_link">
+            <img class="header__ancor_img" src="./image/header-ancor.png" alt="Ancor forms">
+          </a>
         </div>
       </div>
     </div>
@@ -237,19 +239,98 @@
             <h3 class="feedback__description_header">EMAIL US</h3>
             <a class="feedback__description_email" href="mailto:contactus@email.com">contactus@email.com</a>
           </div>
-          <div class="feedback__forms">
-            <form class="feedback__form" action="#">
-              <input class="feedback__form_input" type="text" name="name" placeholder="Name">
-              <input class="feedback__form_input" type="text" name="email" placeholder="Email">
-              <input class="feedback__form_input" type="text" name="subject" placeholder="Subject">
-              <textarea class="feedback__form_textarea" name="message" placeholder="Message"></textarea>
-              <button class="feedback__form_button" type="submit">SEND MESSAGE</button>
+          <div class="feedback__forms" id="form">
+            <form class="feedback__form" id="feedback__form">
+              <input class="feedback__form_input" id="feedback__form_name" type="text" name="name" placeholder="Name">
+              <input class="feedback__form_input" id="feedback__form_email" type="text" name="email" placeholder="Email">
+              <input class="feedback__form_input" id="feedback__form_subject" type="text" name="subject" placeholder="Subject">
+              <textarea class="feedback__form_textarea" id="feedback__form_message" name="message" placeholder="Message"></textarea>
             </form>
+            <button id="feedback__form_button" class="btn__disabled" type="submit">SEND MESSAGE</button>
           </div>
         </div>
       </div>
     </div>
+    <div class="promo">
+      <h2 class="promo__header">Let's Get Started Now. <span>It's FREE!</span></h2>
+      <p class="promo__text">
+        30 day free trial. Free plan allows up to 2 projects. Pay if you need
+        more. Cancel anytime. No catches.
+      </p>
+      <button class="promo__btn btn__orange">START FREE TRIAL</button>
+    </div>
   </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__box">
+        <div class="footer__links">
+          <div class="footer__link-box">
+            <a href="#" class="footer__link">
+              <svg class="footer__link_svg" xmlns="http://www.w3.org/2000/svg" width="9.969" height="20" viewBox="0 0 9.969 20">
+                <path id="facebook" class="cls-1" d="M380.806,3755.32h2.151V3752H380.2v0.01c-3.651.13-4.635,2.19-4.7,4.36H375.5v2.29h-2.487v3.32H375.5v10.01h4.137v-10.01h2.513l0.6-3.32h-3.117v-2.05A1.2,1.2,0,0,1,380.806,3755.32Z" transform="translate(-373 -3752)"/>
+              </svg>
+            </a>
+          </div>
+          <div class="footer__link-box">
+            <a href="#" class="footer__link">
+              <svg class="footer__link_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="23.03" viewBox="0 0 26 23.03">
+                <path id="twitter" class="cls-1" d="M428.542,3756.06a7.253,7.253,0,0,1-2.277.65,4.382,4.382,0,0,0,1.71-2.24,6.641,6.641,0,0,1-2.56.91h0a4.219,4.219,0,0,0-2.966-1.4,4.073,4.073,0,0,0-3.923,4.25,4.164,4.164,0,0,0,.1.92h0a11.918,11.918,0,0,1-8.643-4.43,4.338,4.338,0,0,0,1.245,5.6,2.616,2.616,0,0,1-1.792-.47,3.968,3.968,0,0,0,3.166,4.03,3.2,3.2,0,0,1-1.709.13,3.877,3.877,0,0,0,3.669,2.8,7.234,7.234,0,0,1-5.919,1.71,12.248,12.248,0,0,0,6.421,1.83,11.66,11.66,0,0,0,11.772-12.04c0-.01,0-0.02,0-0.03s0-.03,0-0.05,0-.04,0-0.06A6.7,6.7,0,0,0,428.542,3756.06Z" transform="translate(-406 -3753.97)"/>
+              </svg>
+            </a>
+          </div>
+          <div class="footer__link-box">
+            <a href="#" class="footer__link">
+              <svg class="footer__link_svg" xmlns="http://www.w3.org/2000/svg" width="19.874" height="19.97" viewBox="0 0 19.874 19.97">
+                <path id="rss" class="cls-1" d="M451.337,3766.18a2.89,2.89,0,1,0,2.9,2.89A2.9,2.9,0,0,0,451.337,3766.18Zm-2.746-7.49c-0.051,0-.1.01-0.153,0.01v3.69a0.787,0.787,0,0,1,.153-0.01,9.493,9.493,0,0,1,9.384,9.38c0,0.08-.01.15-0.012,0.23h3.7c0-.08.013-0.15,0.013-0.23A13.2,13.2,0,0,0,448.591,3758.69Zm0-6.67c-0.051,0-.1.01-0.153,0.01v3.72c0.051,0,.1-0.01.153-0.01a16.133,16.133,0,0,1,16.067,16.02c0,0.08,0,.15-0.006.23H468.3c0-.08.006-0.15,0.006-0.23A19.816,19.816,0,0,0,448.591,3752.02Z" transform="translate(-448.438 -3752.03)"/>
+              </svg>
+            </a>
+          </div>
+          <div class="footer__link-box">
+            <a href="#" class="footer__link">
+              <svg class="footer__link_svg" xmlns="http://www.w3.org/2000/svg" width="19.937" height="17.5" viewBox="0 0 19.937 17.5">
+                <path id="google_plus" data-name="google plus" class="cls-1" d="M497.976,3763.03a3.726,3.726,0,0,1-1.482-1.77c0-.6.172-0.9,1.081-1.61a3.487,3.487,0,0,0,1.487-2.83c0-1.43-.527-3.15-1.712-3.15h1.786l1.261-.83h-5.633c-2.526,0-4.9,1.76-4.9,3.98a4.013,4.013,0,0,0,4.29,4.03,4.473,4.473,0,0,0,.523-0.06,2.214,2.214,0,0,0-.287,1.04,2.184,2.184,0,0,0,.767,1.55h-0.977c-3.127,0-5.975,1.69-5.975,3.77,0,2.04,3.08,3.19,6.208,3.19,3.565,0,5.406-1.59,5.406-3.64A3.819,3.819,0,0,0,497.976,3763.03Zm-3.008-2.84c-1.453-.04-2.831-1.63-3.081-3.55s0.722-3.38,2.172-3.33,2.831,1.58,3.082,3.49S496.418,3760.23,494.968,3760.19Zm-0.569,9.24c-2.161,0-3.723-.93-3.723-2.58,0-1.62,1.936-2.97,4.1-2.94a4.493,4.493,0,0,1,1.4.22c1.174,0.82,1.809,1.29,2.046,2.22a2.543,2.543,0,0,1,.069.58C498.291,3768.59,497.439,3769.43,494.4,3769.43Zm11.244-15.8v2.54h2.482v1.68h-2.482v2.5h-1.658v-2.5H501.5v-1.68h2.483v-2.54h1.658Z" transform="translate(-488.188 -3752.84)"/>
+              </svg>
+            </a>
+          </div>
+          <div class="footer__link-box">
+            <a href="#" class="footer__link">
+              <svg class="footer__link_svg" xmlns="http://www.w3.org/2000/svg" width="20.219" height="18.57" viewBox="0 0 20.219 18.57">
+                <path id="linkedin" class="cls-1" d="M524.715,3771.16h4.14v-12.49h-4.14v12.49Zm14.747-12.91a4.585,4.585,0,0,0-4.017,2.13v-1.71H531.33v12.49h4.141v-6.77c0-1.43.722-2.82,2.357-2.82a2.683,2.683,0,0,1,2.631,2.79v6.8H544.6v-7.08C544.6,3759.16,541.271,3758.25,539.462,3758.25Zm-12.659-5.66a2.211,2.211,0,1,0,2.434,2.2A2.33,2.33,0,0,0,526.8,3752.59Z" transform="translate(-524.375 -3752.59)"/>
+              </svg>
+            </a>
+          </div>
+          <div class="footer__link-box">
+            <a href="#" class="footer__link">
+              <svg class="footer__link_svg" xmlns="http://www.w3.org/2000/svg" width="19.906" height="20" viewBox="0 0 19.906 20">
+                <path id="skype" class="cls-1" d="M582.939,3763.35a9.062,9.062,0,0,0,.11-1.33,8.7,8.7,0,0,0-8.869-8.68,9.9,9.9,0,0,0-1.344.11,5.241,5.241,0,0,0-3.283-1.45,5.079,5.079,0,0,0-4.038,8.13,8.978,8.978,0,0,0-.2,1.89,9.09,9.09,0,0,0,8.869,9.14,9.225,9.225,0,0,0,1.835-.19,4.841,4.841,0,0,0,3.318,1.02A5.083,5.083,0,0,0,582.939,3763.35Zm-4.62,2.76a3.479,3.479,0,0,1-1.534,1.17,6.209,6.209,0,0,1-2.393.42,5.708,5.708,0,0,1-2.739-.58,3.5,3.5,0,0,1-1.243-1.11,2.376,2.376,0,0,1-.477-1.35,0.851,0.851,0,0,1,.286-0.65,0.99,0.99,0,0,1,.731-0.28,0.91,0.91,0,0,1,.608.21,1.7,1.7,0,0,1,.424.63,4.082,4.082,0,0,0,.463.83,1.933,1.933,0,0,0,.7.55,3.387,3.387,0,0,0,2.826-.22,1.284,1.284,0,0,0,.632-1.09,1.085,1.085,0,0,0-.34-0.83,2.141,2.141,0,0,0-.88-0.49,12.4,12.4,0,0,0-1.442-.36,11.96,11.96,0,0,1-2.023-.61,3.34,3.34,0,0,1-1.292-.96,2.33,2.33,0,0,1-.478-1.5,2.458,2.458,0,0,1,.5-1.52,3.2,3.2,0,0,1,1.461-1.02,6.376,6.376,0,0,1,2.248-.35,5.931,5.931,0,0,1,1.786.23,3.941,3.941,0,0,1,1.249.63,2.72,2.72,0,0,1,.727.82,1.8,1.8,0,0,1,.23.84,0.965,0.965,0,0,1-.287.68,0.947,0.947,0,0,1-.715.3,0.867,0.867,0,0,1-.593-0.18,2.475,2.475,0,0,1-.439-0.59,2.741,2.741,0,0,0-.735-0.92,2.279,2.279,0,0,0-1.377-.32,2.516,2.516,0,0,0-1.418.35,1.021,1.021,0,0,0-.539.86,0.829,0.829,0,0,0,.184.54,1.394,1.394,0,0,0,.5.38,3.358,3.358,0,0,0,.649.26q0.329,0.09,1.087.27c0.631,0.13,1.2.29,1.716,0.45a5.416,5.416,0,0,1,1.307.6,2.481,2.481,0,0,1,.842.89,2.686,2.686,0,0,1,.3,1.33A2.9,2.9,0,0,1,578.319,3766.11Z" transform="translate(-564.5 -3752)"/>
+              </svg>
+            </a>
+          </div>
+          <div class="footer__link-box">
+            <a href="#" class="footer__link">
+              <svg class="footer__link_svg" xmlns="http://www.w3.org/2000/svg" width="19.907" height="17.47" viewBox="0 0 19.907 17.47">
+                <path id="vimeo" class="cls-1" d="M604.287,3758.48c1.75-1.37,4.241-3.98,6.182-3.98s2.415,1.84,2.682,3.89,1.027,6.51,2.054,6.51,3.366-3.95,3.234-5.48-1.826-1.3-2.758-.86c0.855-3.06,2.835-4.87,5.363-4.87s3.138,1.95,3.138,4.1c0,3.29-6.771,13.36-10.859,13.36-2.531,0-3.159-3.67-3.671-5.48s-1.521-6.58-2.7-6.88a4.567,4.567,0,0,0-1.75.93Z" transform="translate(-604.281 -3753.69)"/>
+              </svg>
+            </a>
+          </div>
+          <div class="footer__link-box">
+            <a href="#" class="footer__link">
+              <svg class="footer__link_svg" xmlns="http://www.w3.org/2000/svg" width="11.625" height="20" viewBox="0 0 11.625 20">
+                <path id="tumblr" class="cls-1" d="M656.661,3768.71a2.518,2.518,0,0,1-2.63-2.36v-5.99h4.138v-3.37h-4.138V3752h-2.893a5.029,5.029,0,0,1-3.751,5.14v3.18h2.491v7.14a4.838,4.838,0,0,0,5.04,4.53,6.626,6.626,0,0,0,4.089-1.11v-3.27A2.672,2.672,0,0,1,656.661,3768.71Z" transform="translate(-647.375 -3752)"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__copyright">
+          <p>Kazi Erfan &copy; All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+
+    <a class="footer__up" href="#">
+      <span class="footer__up_arrow"></span>
+    </a>
+  </footer>
   <script src="/js/app.js"></script>
 </body>
 </html>

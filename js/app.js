@@ -8,8 +8,18 @@ const sliderWindow = document.querySelector('.slider__window');
 const sliderContent = document.querySelectorAll('.slider__content');
 const sliderButtonLeft = document.querySelector('.slider__left_box');
 const sliderButtonRight = document.querySelector('.slider__right_box');
+const footerLink = document.querySelectorAll('.footer__link');
+const form = document.getElementById('feedback__form');
+const inputName = document.getElementById('feedback__form_name');
+const inputEmail = document.getElementById('feedback__form_email');
+const inputSubject = document.getElementById('feedback__form_subject');
+const inputMessage = document.getElementById('feedback__form_message');
+const formButton = document.getElementById('feedback__form_button');
 let sliderCount = 0;
 let sliderContentWidth = null;
+const regExpEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
+
+// Slider
 
 function initSliderWidth() {
   sliderContentWidth = slider.offsetWidth;
@@ -23,24 +33,6 @@ function initSliderWidth() {
 function scrollSlider() {
   sliderWindow.style.transform = 'translate(-' + sliderCount * sliderContentWidth +'px';
 }
-
-navClose.addEventListener('click', () => {
-  navList.classList.remove('nav__open');
-  body.classList.remove('scroll__block');
-})
-
-navOpen.addEventListener('click', () => {
-  navList.classList.add('nav__open');
-  body.classList.add('scroll__block');
-})
-
-navLink.forEach(link => {
-  link.addEventListener('click', (e)=> {
-    e.preventDefault();
-    navList.classList.remove('nav__open');
-    body.classList.remove('scroll__block');
-  })
-})
 
 window.addEventListener('resize', initSliderWidth);
 
@@ -61,3 +53,114 @@ sliderButtonLeft.addEventListener('click', (e) => {
   }
   scrollSlider()
 })
+
+// NavBar
+
+navClose.addEventListener('click', () => {
+  navList.classList.remove('nav__open');
+  body.classList.remove('scroll__block');
+})
+
+navOpen.addEventListener('click', () => {
+  navList.classList.add('nav__open');
+  body.classList.add('scroll__block');
+})
+
+navLink.forEach(link => {
+  link.addEventListener('click', (e)=> {
+    e.preventDefault();
+    navList.classList.remove('nav__open');
+    body.classList.remove('scroll__block');
+  })
+})
+
+// Footer link
+
+footerLink.forEach(item => {
+  item.addEventListener('click', (e)=> {
+    e.preventDefault();
+  })
+})
+
+// validation email
+
+inputEmail.addEventListener('input', () => {
+  if (inputEmail.value === '') {
+    inputEmail.classList.remove('input__error');
+    inputEmail.classList.remove('input__resolve');
+    formButton.classList.remove('btn__orange');
+    formButton.classList.remove('feedback__form_button');
+    formButton.classList.add('btn__disabled')
+    formButton.disabled = true;
+    formButton.className = 'btn__disabled';
+  } else if (regExpEmail.test(inputEmail.value)) {
+    inputEmail.classList.remove('input__error');
+    inputEmail.classList.add('input__resolve');
+    formButton.classList.remove('btn__disabled');
+    formButton.classList.add('feedback__form_button');
+    formButton.classList.add('btn__orange');
+    formButton.disabled = false;
+    
+  } else {
+    inputEmail.classList.add('input__error');
+    inputEmail.classList.remove('input__resolve');
+    formButton.classList.remove('btn__orange');
+    formButton.classList.remove('feedback__form_button');
+    formButton.classList.add('btn__disabled');
+    formButton.disabled = true;
+  }
+})
+
+// Отправка данных
+
+// function checkInput(str) {
+//   if (str === '') {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// form.addEventListener('submit', async (e) => {
+//   e.preventDefault();
+//   const userData = {
+//     name: inputName.value,
+//     email: inputEmail.value,
+//     subject: inputSubject.value,
+//     message: inputMessage.value
+//   };
+//   try {
+//     for(let data in userData) {
+//       if (data === '') {
+//         throw new Error(data);
+//       }
+//       if(data === userData.email) {
+//         const checkedEmail = regExpEmail.test(data);
+
+//         if(!checkedEmail) {
+//           throw new Error(data);
+//         }
+//       }
+//     }
+
+//     let response = await fetch('/reg', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify(userData)
+//     })
+//     console.log(result)
+//   } catch(error) {
+//     console.log(error)
+//   }
+// })
+
+formButton.addEventListener('click', (e) => {
+  let result = fetch('/regist', {
+    method: 'POST',
+    body: new FormData(form)
+  })
+})
+
+    

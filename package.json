@@ -1,0 +1,22 @@
+{
+  "name": "bino-shorts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "express": "^4.18.1"
+  },
+  "scripts": {
+    "start": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/destroyer-beep/bino-shorts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/destroyer-beep/bino-shorts/issues"
+  },
+  "homepage": "https://github.com/destroyer-beep/bino-shorts#readme",
+  "description": ""
+}
