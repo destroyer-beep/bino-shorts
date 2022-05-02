@@ -15,9 +15,9 @@ app.post('/reg', (req, res) => {
       subject,
       message
     })
-    res.send('User add!');
+    res.status(200).send('User add!');
   } else {
-    res.send(new Error('Пользователь уже существует!'));
+    res.status(500).send(new Error('Пользователь уже существует!'));
   }
   
 })

@@ -120,6 +120,13 @@ formButton.addEventListener('click', async (e) => {
     method: 'POST',
     body: JSON.stringify(data),
   })
-  console.log(response);
+  if (response.ok) {
+    console.log(response);
+    console.log('Пользователь добавлен');
+  } else {
+    console.log(response);
+    console.log('Ошибка');
+  }
+  
   }
 })
