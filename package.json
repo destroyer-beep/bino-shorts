@@ -18,5 +18,8 @@
     "url": "https://github.com/destroyer-beep/bino-shorts/issues"
   },
   "homepage": "https://github.com/destroyer-beep/bino-shorts#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "allow-methods": "^4.0.0"
+  }
 }

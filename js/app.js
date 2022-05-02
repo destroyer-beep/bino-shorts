@@ -113,54 +113,13 @@ inputEmail.addEventListener('input', () => {
 
 // Отправка данных
 
-// function checkInput(str) {
-//   if (str === '') {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// }
-
-// form.addEventListener('submit', async (e) => {
-//   e.preventDefault();
-//   const userData = {
-//     name: inputName.value,
-//     email: inputEmail.value,
-//     subject: inputSubject.value,
-//     message: inputMessage.value
-//   };
-//   try {
-//     for(let data in userData) {
-//       if (data === '') {
-//         throw new Error(data);
-//       }
-//       if(data === userData.email) {
-//         const checkedEmail = regExpEmail.test(data);
-
-//         if(!checkedEmail) {
-//           throw new Error(data);
-//         }
-//       }
-//     }
-
-//     let response = await fetch('/reg', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(userData)
-//     })
-//     console.log(result)
-//   } catch(error) {
-//     console.log(error)
-//   }
-// })
-
-formButton.addEventListener('click', (e) => {
-  let result = fetch('/regist', {
+formButton.addEventListener('click', async (e) => {
+  if(regExpEmail.test(inputEmail.value)) {
+    const data = new FormData(form);
+    let response = await fetch("/reg", {
     method: 'POST',
-    body: new FormData(form)
+    body: JSON.stringify(data),
   })
+  console.log(response);
+  }
 })
-
-    

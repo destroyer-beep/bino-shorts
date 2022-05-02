@@ -1,27 +1,25 @@
 const dataBase = require('./dataBase.js');
 const express = require('express');
 const app = express();
+app.use(express.json());
 
-app.post('/regist', (req, res) => {
-  // try {
-    console.log(req.body)
-    const body = req.body;
-    console.log(body);
-  //   const {userName, email, subject, message} = body;
-  //   const getUser = dataBase.keys(email);
-  //   if (getUser) {
-  //     throw new Error('Данная почта уже зарегистрирована');
-  //   } else {
-  //     dataBase.set(email, {
-  //       userName,
-  //       subject,
-  //       message
-  //     });
-  //     res.status(200).send('Пользователь сохранен');
-  //   }
-  // } catch (error) {
-  //   res.status(400).send(error.message);
-  // }
+app.post('/reg', (req, res) => {
+  const body = req.body;
+  const name = body.get(name);
+  const email = body.get(email);
+  const subject = body.get(subject);
+  const message = body.get(message);
+  if(!dataBase.get(email)) {
+    dataBase.set(email, {
+      name,
+      subject,
+      message
+    })
+    res.send('User add!');
+  } else {
+    res.send(new Error('Пользователь уже существует!'));
+  }
+  
 })
 
-app.listen(3000, () => console.log('Server started!'))
+app.listen(5500, () => console.log('Server started!'))
