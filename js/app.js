@@ -114,19 +114,52 @@ inputEmail.addEventListener('input', () => {
 // Отправка данных
 
 formButton.addEventListener('click', async (e) => {
-  if(regExpEmail.test(inputEmail.value)) {
-    const data = new FormData(form);
-    let response = await fetch("/reg", {
+  try{
+    if(regExpEmail.test(inputEmail.value)) {
+    const formData = new FormData(form);
+    const name = formData.get('name') || '';
+    const email = formData.get('email');
+    const subject = formData.get('subject') || '';
+    const message = formData.get('message') || '';
+    let response = await fetch("http://127.0.0.1:5000/reg", {
     method: 'POST',
-    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      name,
+      email,
+      subject,
+      message
+    })
   })
-  if (response.ok) {
-    console.log(response);
-    console.log('Пользователь добавлен');
+  if(response.ok) {
+    const answer = await response.text();
+    const messageBox = document.createElement('div');
+    messageBox.classList.add('message');
+    const messageText = document.createElement('p');
+    messageText.classList.add('message__text');
+    messageText.textContent = answer;
+    messageBox.append(messageText);
+    body.append(messageBox);
+    setTimeout(() => messageBox.remove(), 2000);
+    inputName.value = '';
+    inputEmail.value = '';
+    inputSubject.value = '';
+    inputMessage.value = '';
   } else {
-    console.log(response);
-    console.log('Ошибка');
+    throw new Error(await response.text());
   }
-  
+  }
+  } catch(e) {
+    const answer = e.message;
+    const messageBox = document.createElement('div');
+    messageBox.classList.add('message');
+    const messageText = document.createElement('p');
+    messageText.classList.add('message__error');
+    messageText.textContent = answer;
+    messageBox.append(messageText);
+    body.append(messageBox);
+    setTimeout(() => messageBox.remove(), 2000);
   }
 })

@@ -20,6 +20,7 @@
   "homepage": "https://github.com/destroyer-beep/bino-shorts#readme",
   "description": "",
   "dependencies": {
-    "allow-methods": "^4.0.0"
+    "allow-methods": "^4.0.0",
+    "cors": "^2.8.5"
   }
 }
